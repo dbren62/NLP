@@ -40,13 +40,17 @@ print(top15nouns)
 from wordcloud import WordCloud
 import imageio
 
-text = str(top15nouns)
 
-mask_image = imageio.imread("mask_circle.png")
+#top15list = [word[0] for word in top15nouns]
+#text = " ".join(top15list)
+#print(text)
 
-wordcloud = WordCloud(colormap="prism", mask=mask_image, background_color="white")
+#mask_image = imageio.imread("mask_circle.png")
 
-wordcloud = wordcloud.generate(text)
+wordcloud = WordCloud(colormap="turbo", background_color="white")
+
+wordcloud = wordcloud.generate_from_frequencies(dict(top15nouns))
+#wordcloud = wordcloud.generate(text)
 
 wordcloud = wordcloud.to_file("BookOfJohnCircle.png")
 
