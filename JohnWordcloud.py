@@ -34,12 +34,10 @@ top15 = sorted_items[:15]
 
 sorted_nouns = sorted(noun_list, key=itemgetter(1), reverse=True)
 top15nouns = sorted_nouns[:15]
-
 print(top15nouns)
 
 from wordcloud import WordCloud
 import imageio
-
 
 #top15list = [word[0] for word in top15nouns]
 #text = " ".join(top15list)
